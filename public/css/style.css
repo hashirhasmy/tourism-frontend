@@ -1,0 +1,76 @@
+#map {
+    min-height: 500px;
+}
+ /* Optional: Makes the sample page fill the window. */
+ html,
+ body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+ }
+ #post-time{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #999999;
+    font-size: x-small;
+}
+
+#avatar{
+    /* width: 70px; */
+    height: 70px;
+    border-radius: 50%;
+    margin: 5px 10px
+}
+.my-in{
+    display: inline-block;
+}
+
+.App{
+    text-align: center;
+}
+.Center{
+    text-align: center;
+    margin-top: 100px;
+}
+.navbar-nav li a{
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+}
+.navbar {
+    min-height: 80px;
+  }
+  
+.navbar-brand {
+    padding: 0 15px;
+    height: 80px;
+    line-height: 80px;
+  }
+  
+.navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 23px;
+    padding: 9px 10px !important;
+  }
+  
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
+      /* (80px - line-height of 27px) / 2 = 26.5px */
+      padding-top: 26.5px;
+      padding-bottom: 26.5px;
+      line-height: 27px;
+    }
+  }
+.size{
+  font-size: large;
+  font-weight: bold; 
+}
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: #f4623a;
+}
+/* .nav-link{
+  color: rgba(161, 173, 48, 0.397) !important ;
+} */
+

@@ -1,0 +1,879 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Nunito:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Properties */
+:root {
+  --dark-color: #1e1c34;
+  --yellow-solid: #fff96d;
+
+  --green: #28a745;
+  --teal: #20c997;
+  --polished-metal-green: #38c544;
+  --background-optional-green: #63d471;
+  --green-solid: #043d04;
+  --green-transarent: #035203;
+  --green-transarent-alt: #004700;
+  --success: #28a745;
+  --green-light: #1ace44;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --info: #17a2b8;
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
+/* Global styles */
+
+.font-cinzel {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.font-nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Main */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  color: var(--dark-color);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/*Reusable styles*/
+.container {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+/*Reusable styles*/
+.btn {
+  color: var(--dark-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-dark {
+  color: var(--light);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.5rem 3.5rem;
+  border: none;
+  border-radius: 10rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-dark:hover {
+  background-color: #1e1c34;
+}
+
+.form-btn {
+  margin-top: 2.5rem;
+  cursor: pointer;
+}
+
+.btn-bg-yellow {
+  background-color: var(--yellow-solid);
+}
+
+.btn-bg-yellow:hover {
+  background-color: #e8f196;
+}
+
+.btn-bg-black {
+  background-color: var(--dark-color);
+}
+.btn-bg-black:hover {
+  background-color: #000;
+}
+
+/* .btn-bg-yellow {
+  background-color: var(--purple-solid);
+  transition: background-color 0.5s;
+} */
+
+/* .btn-bg-yellow:hover {
+  background-color: #56247f;
+} */
+.dots {
+  font-size: 2.4rem;
+  margin-left: 0.5rem;
+  opacity: 0.75;
+}
+
+/*Header styles*/
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.5s, height 0.5s;
+  background-color: #1e1c3480;
+}
+
+.header.active {
+  background-color: var(--dark-color);
+}
+
+/*Header styles-nav*/
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-width: 40%;
+}
+.hamburger-menu {
+  font-size: 2.6rem;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 1500;
+}
+
+.hamburger-menu .fa-times {
+  display: none;
+}
+
+.menu-open .hamburger-menu .fa-times {
+  display: block;
+}
+
+.menu-open .hamburger-menu .fa-bars {
+  display: none;
+}
+
+.nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--yellow-solid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s;
+}
+
+.menu-open .nav-list {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-item:not(last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  color: var(--light);
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1rem;
+}
+
+.nav-link:hover {
+  color: #fa9e2c;
+}
+
+/* Hero section styles */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url('./img/46.jpg') center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  /* background-color: var(--puple-transparent-alt); */
+  z-index: -1;
+}
+.main-heading {
+  color: var(--light);
+  font-family: 'Cinzel Decorative', cursive;
+  line-height: 1;
+  text-shadow: 1px 1px 1rem rgba(0, 0, 0, 5);
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 300;
+}
+
+/* Booking Section Styles */
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.input,
+.options {
+  outline: none;
+  border: none;
+  width: 100%;
+  min-height: 4rem;
+  padding: 1rem;
+  font-weight: normal;
+  color: #a5a5a5;
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+}
+
+::placeholder {
+  color: inherit;
+}
+
+/* featured hotels section styles */
+.section-head {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.heading {
+  font-family: 'Cinzel Decorative', cursive;
+  display: block;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.sub-heading {
+  font-size: 2.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  color: #a5a5a5;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2.5rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-hotel {
+  height: 35rem;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 0;
+}
+
+.featured-hotel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hotel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  border-radius: 5%;
+}
+
+.hotel-name {
+  font-size: 2.6rem;
+  color: var(--dark-color);
+}
+
+.hotel-price {
+  font-size: 1.8rem;
+}
+
+.hotel-rating {
+  margin: 1rem 0 2.5rem;
+}
+
+.rating {
+  color: var(--yellow-solid);
+}
+
+/* Special section styles */
+
+.offer {
+  background-color: var(--dark-color);
+}
+.offer-content {
+  background-color: #fff;
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.discount {
+  background-color: var(--yellow-solid);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: 2px solid var(--yellow-solid);
+  outline-offset: 0.5rem;
+}
+
+.paragraph {
+  color: #a5a5a5;
+  margin-bottom: 2.5rem;
+}
+
+/* Contact section styles */
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+}
+
+.traveler-wrap {
+  display: none;
+  padding-left: 60px;
+}
+
+/* this style will be useful for the form background for any needed pages */
+
+.contact-form {
+  width: 100%;
+  background-image: var(--gradient-color);
+  padding: 2.5rem;
+}
+
+.contact-form .input {
+  display: block;
+  background-color: transparent;
+  color: #fff;
+  font-weight: normal;
+  border-bottom: 2px solid #fff;
+  padding-left: 0;
+}
+
+.bar {
+  display: block;
+  position: relative;
+}
+
+.bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--purple-light);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.contact-form .input:focus + .bar::after {
+  transform: scaleX(1);
+}
+
+/* Footer section styles */
+
+.footer {
+  padding-top: 3rem;
+  background-color: var(--dark-color);
+  color: var(--light);
+}
+
+.footer-content-brand {
+  margin-bottom: 5rem;
+}
+
+.footer .paragraph {
+  color: inherit;
+}
+
+.footer-heading {
+  /* text-transform: uppercase; */
+  margin-bottom: 2.5rem;
+  font-size: 18px;
+}
+
+.footer-link2:hover {
+  text-decoration: underline;
+  color: rgb(70, 70, 226);
+}
+
+.social-media {
+  display: flex;
+}
+
+.sm-link {
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid rgb(44, 44, 48);
+  border-radius: 50%;
+  display: flex;
+  margin-right: 1rem;
+  transition: background-color 0.5s;
+  color: rgb(20, 5, 88);
+}
+
+.sm-link:hover {
+  background-color: rgb(247, 247, 247);
+  color: var(--dark-color);
+}
+
+.sm-link i {
+  margin: auto;
+}
+.footer-bot-wrapper {
+  background-color: var(--yellow-solid);
+  color: var(--dark-color);
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+  font-size: 15px;
+  height: auto;
+  padding: 1rem 0 1rem 0;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+/* Upper footer contact details styles */
+
+.contact-details {
+  height: auto;
+  width: auto;
+  float: left;
+  display: block;
+  border-right: 1px solid #4f4f4f;
+  color: #000;
+  font-family: 'Cinzel Decorative', cursive;
+  padding-right: 13px;
+  /* text-transform: uppercase; */
+  text-align: right;
+}
+.footer-link:hover {
+  color: var(--yellow-solid);
+}
+
+#btnbook:hover {
+  color: var(--white);
+}
+
+/* styles for contact details & phn no & email to responsive screen sizes contact.html  */
+
+#container1 {
+  width: 960px;
+  margin: 0px auto;
+}
+
+#left-column1 {
+  width: 955px;
+  border-radius: 50px;
+  padding-left: 30px;
+  padding-right: 20px;
+
+  /* float: left; */
+  background: rgb(226, 226, 241);
+}
+
+#right-column1 {
+  width: 955px;
+  /* float: left; */
+  background: orange;
+}
+
+.mapwrapper {
+  position: relative;
+  padding-bottom: 66.666667%;
+  height: 0;
+}
+
+.mapwrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* #mapwrapper1{
+  width: 650px;
+  border-radius: 50px;
+padding-left: 350px;
+padding-right: 20px;
+ }
+ */
+
+@media screen and (max-width: 959px) {
+  #container1 {
+    width: 100%;
+  }
+
+  #left-column1 {
+    width: 100%;
+  }
+
+  #right-column1 {
+    width: 100%;
+  }
+
+  #mapwrapper1 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #container1 {
+    width: 100%;
+  }
+
+  #left-column1 {
+    width: 100%;
+  }
+
+  #right-column1 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #container1 {
+    width: 100%;
+  }
+}
+
+/* Media Queries */
+
+/* Media responsive screen queries for min-width 768px screen size */
+@media screen and (min-width: 768px) {
+  /* Header section Styles */
+  .header {
+    height: 10rem;
+  }
+  .header.active {
+    height: 6rem;
+  }
+  /* Hero section styles */
+  .title {
+    font-size: 8rem;
+  }
+
+  /* Contact section styles */
+  .contact-content {
+    justify-content: space-between;
+  }
+  .traveler-wrap {
+    display: block;
+    flex: 0 0 45%;
+    margin-left: 60px;
+  }
+  .traveler-wrap img {
+    width: 100%;
+  }
+
+  .contact-form {
+    flex: 0 0 50%;
+    align-self: flex-start;
+  }
+  .input-group-wrap {
+    display: flex;
+  }
+  .input-group-wrap .input-group {
+    width: 50%;
+    margin-right: 2rem;
+  }
+  .input-group-wrap .input-group:last-child {
+    margin-right: 0;
+  }
+
+  /* Footer section styles */
+
+  .footer {
+    overflow-x: hidden;
+  }
+  .footer-content {
+    display: flex;
+  }
+
+  .footer-content-brand {
+    margin-bottom: 0;
+    flex: 0 0 60%;
+  }
+
+  .footer .paragraph {
+    margin-top: 2.5rem;
+    font: arial;
+  }
+
+  .footer-heading {
+    margin-bottom: 2rem;
+  }
+
+  .social-media-wrap {
+    flex: 0 0 40%;
+    margin-left: 2.5rem;
+  }
+
+  .contact-details {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+    border-right: 0;
+  }
+}
+
+/* Media responsive screen queries for min-width 1000px screen size */
+
+@media screen and (min-width: 1000px) {
+  section:not(.booking) {
+    padding: 10rem o;
+  }
+
+  /* Header section styles */
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: initial;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .nav-list:not(:last-child) {
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+
+  .nav-link {
+    font-size: 1.3rem;
+    font-weight: normal;
+    transition: color 0.5s;
+  }
+
+  .nav-link:hover {
+    color: var(--yellow-solid);
+  }
+
+  /* Hero section styles */
+
+  .sub-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 4.6rem;
+  }
+  /* Booking section styles */
+
+  .book-form {
+    display: flex;
+    justify-content: space-between;
+  }
+  .book-form .input-group {
+    margin-bottom: 0;
+  }
+
+  .book-form .input-group:first-child {
+    flex: 0 0 20%;
+  }
+  .input,
+  .options {
+    min-width: 10rem;
+  }
+}
+
+/* Media responsive screen queries for min-width 1200px screen size */
+
+@media screen and (min-width: 1200px) {
+  .book-form .input-group:first-child {
+    flex: 0 0 20%;
+    /*below one will be useful for 15.6 inch PCs*/
+    /* flex: 0 0 30%;   */
+  }
+}
+
+.icon-bar1 {
+  width: 100%;
+  height: 300px;
+  padding-top: 20px;
+  padding-left: 50px;
+  background-color: #e2e2f1;
+  /* margin-left: 50px; */
+  border-radius: 50px;
+  /* text-align: center; */
+}
+
+.icon-bar1 i {
+  /* display: block; */
+  text-align: inherit;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: black;
+  font-size: 30px;
+}
+
+.icon-bar1 i:hover {
+  /* background-color: var(--green); */
+  color: var(--teal);
+  cursor: pointer;
+}
+
+.bg-image {
+  min-width: 100%;
+  background-size: cover;
+
+  overflow: hidden;
+}
+
+/* Home page */
+.about {
+  padding: 20rem;
+  margin-bottom: 35rem;
+}
+
+.about-img {
+  width: 50%;
+
+  float: right;
+}
+
+.about-content {
+  width: 40%;
+  float: left;
+}
+
+.why-img {
+  width: 20%;
+  display: inline-flex;
+}
+
+.why-content {
+  text-align: center;
+  padding-right: 20rem;
+}
+
+/* Contact page */
+.branch {
+  font-family: 'Nunito', sans-serif;
+
+  font-weight: bold;
+}
+.branch .container {
+  background-color: var(--yellow-solid);
+}
