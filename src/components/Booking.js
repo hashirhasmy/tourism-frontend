@@ -31,7 +31,7 @@ class Booking extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const API_URL_ENDPOINT = 'http://localhost:8081/api/v1/bookings/add';
+    const API_URL_ENDPOINT = 'http://localhost:8082/api/v1/bookings/add';
 
     const data = {
       first_name: this.state.first_name,

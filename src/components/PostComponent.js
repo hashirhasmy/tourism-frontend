@@ -18,7 +18,7 @@ class PostComponent extends Component{
          * 3. Axios (suited any scenario)
          **/
 
-        const API_URL_ENDPOINT = "http://localhost:8081/api/v1/posts";
+        const API_URL_ENDPOINT = "http://localhost:8082/api/v1/posts";
 
         //promise().then().catch();
         axios.get(API_URL_ENDPOINT)
