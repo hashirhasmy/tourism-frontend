@@ -55,6 +55,7 @@ class AddPostComponent extends Component {
                   onChange={this.onCaptionChange}
                   className="form-control"
                   id="post-caption"
+                  required
                 />
               </div>
               <div className="form-group">
@@ -64,6 +65,7 @@ class AddPostComponent extends Component {
                   onChange={this.onDescriptionChange}
                   className="form-control"
                   id="post-description"
+                  required
                 ></textarea>
               </div>
 
