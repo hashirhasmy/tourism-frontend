@@ -44,7 +44,7 @@ function Footer() {
                 style={{ marginLeft: '20px', fontWeight: 'bold' }}
                 className="footer-link2"
               >
-                go.lk@gmail.com{' '}
+                hashirhasmy111@gmail.com{' '}
               </a>
             </span>
             <br />

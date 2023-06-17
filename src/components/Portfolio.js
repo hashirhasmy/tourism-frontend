@@ -2,10 +2,10 @@ import './Portfolio.css';
 function Portfolio() {
     return (
 
-    <div className="portfolio">
-    <div className="container-fluid p-0">
-    <div className="row no-gutters">
-    <div class="col-lg-4 col-sm-6">
+        <div className="portfolio">
+            <div className="container-fluid p-0">
+                <div className="row no-gutters">
+                    <div class="col-lg-4 col-sm-6">
                         <a className="portfolio-box" href="img/destination1.png">
                             <img className="img-fluid" src="img/destination1.png" alt="" />
                             <div className="portfolio-box-caption">
@@ -33,15 +33,15 @@ function Portfolio() {
                         </a>
                     </div>
 
-    </div>
-    </div>
-    </div>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
-        );
-    }
-    
-    export default Portfolio;
+    );
+}
+
+export default Portfolio;

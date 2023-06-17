@@ -10,7 +10,7 @@ function Home() {
       >
         <div className="container">
           <div className="main-heading">
-            <h1 className="title">Find New Possibilities</h1>
+            <h1 className="title">Mohamed Hashir is back</h1>
             <h2 className="subtitle">Your everyday travel buddy</h2>
           </div>
           <a href="#about" className="btn btn-bg-yellow">
